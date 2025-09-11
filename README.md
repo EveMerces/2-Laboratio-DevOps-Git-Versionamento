@@ -15,7 +15,7 @@ Este repositório contém os arquivos e exercícios práticos do laboratório de
 ```
 ├── README.md          # Este arquivo
 ├── script1.py         # Script Python 1
-├── script2.py         # Script Python 2 (criado e revertido)
+├── script2.py         # Script Python 2
 └── script3.py         # Script Python 3
 ```
 
@@ -27,22 +27,29 @@ Este repositório contém os arquivos e exercícios práticos do laboratório de
 
 **Comandos utilizados:**
 ```bash
-# Criar arquivo
+# Criar script1.py
 echo 'print("Este é o script 1 do projeto")' > script1.py
-
-# Adicionar ao staging
 git add script1.py
+git commit -m "[SIDEVOPS] envio do script1.py"
+git push
 
-# Commit com mensagem padronizada
-git commit -m "[ADSDEVOPS-10] envio do script1.py"
+# Criar script2.py
+echo 'print("Este é o script 2 do projeto")' > script2.py
+git add script2.py
+git commit -m "[SI2A-10] envio do script2.py"
+git push
 
-# Push para repositório remoto
+# Criar script3.py
+echo 'print("Este é o script 3 do projeto")' > script3.py
+git add script3.py
+git commit -m "[SI3A] #done envio do script3.py"
 git push
 ```
 
-**Padrão de mensagem de commit:**
-- `[JIRA-TASK] descrição da ação`
-- Exemplo: `[ADSDEVOPS-10] envio do script1.py`
+**Padrão de mensagem de commit utilizado:**
+- `[SIDEVOPS] envio do script1.py`
+- `[SI2A-10] envio do script2.py`
+- `[SI3A] #done envio do script3.py`
 
 ### 2. Visualização do Histórico
 
@@ -57,63 +64,29 @@ git log
 # Navegar para: Repositório > Commits
 ```
 
-### 3. Revert de Commits
+### 3. Criação de Branch
 
-**Objetivo:** Aprender a reverter commits de forma segura.
-
-**Comandos utilizados:**
-```bash
-# Reverter um commit específico
-git revert 7bc043
-
-# Verificar status após revert
-git status
-
-# Push do commit de revert
-git push
-```
-
-**Resultado:** O arquivo `script2.py` foi removido do repositório através de um commit de revert.
-
-### 4. Trabalho com Branches
-
-**Objetivo:** Criar e trabalhar com branches para desenvolvimento paralelo.
+**Objetivo:** Criar uma nova branch para desenvolvimento paralelo.
 
 **Comandos utilizados:**
 ```bash
-# Criar nova branch a partir da main
-git checkout -b ADSDEVOPS-12
-
-# Criar arquivo na nova branch
-echo 'print("Este é o script 2 do projeto")' > script2.py
-
-# Commit na nova branch
-git add script2.py
-git commit -m "[ADSDEVOPS-12] #done inclusão do novo script2.py"
-
-# Push da nova branch (primeira vez)
-git push --set-upstream origin ADSDEVOPS-12
+# Criar nova branch
+git checkout -b SIDEVOPS-12
 ```
 
-**Boas práticas de nomenclatura:**
-- Usar o ID da tarefa do Jira (sem colchetes)
-- Exemplo: `ADSDEVOPS-12` ao invés de `[ADSDEVOPS-12]`
+**Resultado:** Foi criada a branch `SIDEVOPS-12` para desenvolvimento isolado.
 
-### 5. Merge de Branches
+### 4. Status Atual do Laboratório
 
-**Objetivo:** Integrar mudanças de uma branch para a main.
+**Exercícios Completados:**
+- ✅ Criação dos 3 scripts Python
+- ✅ Commits individuais de cada arquivo
+- ✅ Criação da branch `SIDEVOPS-12`
 
-**Comandos utilizados:**
-```bash
-# Retornar para a branch main
-git checkout main
-
-# Fazer merge da branch de feature
-git merge ADSDEVOPS-12
-
-# Push das mudanças para o repositório remoto
-git push
-```
+**Próximos Passos (Opcionais):**
+- Revert de commits
+- Merge de branches
+- Push de mudanças para repositório remoto
 
 ## 🔧 Comandos Git Essenciais
 
@@ -165,26 +138,21 @@ git log --oneline  # Versão resumida
 git revert hash-do-commit
 ```
 
-## 📊 Fluxo de Trabalho Demonstrado
+## 📊 Fluxo de Trabalho Realizado
 
 1. **Desenvolvimento na main:**
-   - Criação de arquivos
-   - Commits individuais
-   - Push para repositório remoto
+   - ✅ Criação de 3 arquivos Python
+   - ✅ Commits individuais com mensagens padronizadas
+   - ✅ Push para repositório remoto
 
-2. **Revert de mudanças:**
-   - Identificação do commit a ser revertido
-   - Execução do revert
-   - Push da correção
+2. **Criação de branch:**
+   - ✅ Criação da branch `SIDEVOPS-12`
+   - ✅ Branch configurada para desenvolvimento isolado
 
-3. **Desenvolvimento em branch:**
-   - Criação de branch a partir da main
-   - Desenvolvimento isolado
-   - Push da nova branch
-
-4. **Integração:**
-   - Merge da branch para main
-   - Sincronização com repositório remoto
+3. **Histórico de Commits:**
+   - `[SIDEVOPS] envio do script1.py`
+   - `[SI2A-10] envio do script2.py`
+   - `[SI3A] #done envio do script3.py`
 
 ## 🎯 Lições Aprendidas
 
@@ -206,6 +174,6 @@ Este laboratório foi desenvolvido como parte do curso de DevOps, demonstrando a
 
 ---
 
-**Data:** Março 2023  
-**Repositório:** git-tests  
-**Organização:** lab-git
+**Data:** Dezembro 2024  
+**Repositório:** 2-Laboratio-DevOps-Git-Versionamento  
+**Aluno:** Evelyn Silva
